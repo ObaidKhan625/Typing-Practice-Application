@@ -79,11 +79,11 @@ class QDiffGame(QWidget):
         self.Write.setText("")
         #print(len(self.line), len(u_i))
                                                                          #CHECKING THE INPUT
-        if(len(u_i) == 0):
+        if(len(u_i) == 0):                                               #EMPTY INPUT
 
             self.mistakeLabel.setText("\nType Something!!!\n")
 
-        elif(mistakes == 0 and len(u_i) == len(self.line) - 1):
+        elif(mistakes == 0 and len(u_i) == len(self.line) - 1):          #PERFECT ACCURACY
 
             self.mistakeLabel.setText("\nPerfect Sentence!\n")
 
@@ -109,7 +109,7 @@ class QDiffGame(QWidget):
             self.Dtext1 = "Average time : " + str(round(self.avg_time, 2)) + "         Accuracy : " + str(round(self.acc, 2)) + "\n"
             self.DLabel.setText(self.Dtext1)
 
-        elif(len(u_i) >= len(self.line)):
+        elif(len(u_i) >= len(self.line)):                                   #MORE LENGTH OF INPUT SENTENCE THAN REQUIRED
             self.acc = ((self.n-1)*self.acc)/self.n
             #print(self.acc)
             self.mistakeLabel.setText("\nThe Sentence is too Long!\n"+"\n")
